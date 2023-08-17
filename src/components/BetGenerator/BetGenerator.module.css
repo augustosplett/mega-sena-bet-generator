@@ -5,4 +5,22 @@
     max-width: 50%;
     align-items: center;
     justify-content: center;
+    margin: 15px;
+}
+
+.betControls{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+
+.input{
+    width: 100%;
+    text-align: right;
+    margin: 5px;
+
 }
