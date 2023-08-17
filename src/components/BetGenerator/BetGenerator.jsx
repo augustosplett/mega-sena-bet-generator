@@ -11,15 +11,20 @@ function getRandomIntInclusive(min, max) {
 
 function generateBet(num){
     let myArr = []
+    var temp
     for(let i = 0; i < num; i++){
-        myArr.push(getRandomIntInclusive(1,60))
+        do{
+            temp = getRandomIntInclusive(1,60)
+        }while(!(myArr.indexOf(temp) === -1))
+        myArr.push(temp)
     }
     return myArr
 }
 
 export default function BetGenerator(){
+    
     const [numBet, setNumBet] = useState(1)
-    const [content, setContent] = useState("")
+    const [content, setContent] = useState([])
 
     return(
         <>
@@ -38,7 +43,9 @@ export default function BetGenerator(){
                 />
                 <button onClick={() => {
                     let myList = generateBet(numBet)
+                    console.log(myList)
                     let finalList = []
+                    setContent()
                     myList.map((el, index) =>{
                         finalList.push(<NumHolder key={index}>{el}</NumHolder>)
                     })
